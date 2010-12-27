@@ -17,6 +17,7 @@ class Controller_MMI_Cache_Test_Cache extends Controller
 	/**
 	 * Test cache functionality.
 	 *
+	 * @access	public
 	 * @return	void
 	 * @uses	MMI_Debug::dump
 	 */

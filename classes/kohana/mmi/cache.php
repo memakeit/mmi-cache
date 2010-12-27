@@ -37,8 +37,14 @@ class Kohana_MMI_Cache
 	protected static $_instance;
 
 	/**
+	 * @var boolean turn debugging on?
+	 **/
+	protected $_debug;
+
+	/**
 	 * Get a cache item.
 	 *
+	 * @access	public
 	 * @param	string	the cache id
 	 * @param	string	the cache type
 	 * @param	integer	the cache lifetime
@@ -52,6 +58,7 @@ class Kohana_MMI_Cache
 	/**
 	 * Set a cache item.
 	 *
+	 * @access	public
 	 * @param	string	the cache id
 	 * @param	string	the cache type
 	 * @param	mixed	the cache value
@@ -66,6 +73,7 @@ class Kohana_MMI_Cache
 	/**
 	 * Delete a cache item.
 	 *
+	 * @access	public
 	 * @param	string	the cache id
 	 * @param	string	the cache type
 	 * @return	integer
@@ -99,6 +107,7 @@ class Kohana_MMI_Cache
 	/**
 	 * Delete the cache items for a cache type.
 	 *
+	 * @access	public
 	 * @param	string	the cache type
 	 * @return	integer
 	 */
@@ -142,6 +151,7 @@ class Kohana_MMI_Cache
 	/**
 	 * Get the last modified date for a cache item.
 	 *
+	 * @access	public
 	 * @param	string	the cache id
 	 * @param	string	the cache type
 	 * @return	integer	(timestamp)
@@ -162,6 +172,7 @@ class Kohana_MMI_Cache
 	/**
 	 * Get the default cache lifetime.
 	 *
+	 * @access	public
 	 * @param	string	the cache type
 	 * @return	integer
 	 */
@@ -174,6 +185,7 @@ class Kohana_MMI_Cache
 	/**
 	 * Get or set a cache item.
 	 *
+	 * @access	protected
 	 * @param	string	the cache id
 	 * @param	string	the cache type
 	 * @param	mixed	the cache value
@@ -244,6 +256,7 @@ class Kohana_MMI_Cache
 	/**
 	 * Get the filename for a cache item.
 	 *
+	 * @access	protected
 	 * @param	string	the cache id
 	 * @return	string
 	 */
@@ -255,6 +268,7 @@ class Kohana_MMI_Cache
 	/**
 	 * Get the directory for a cache item.
 	 *
+	 * @access	protected
 	 * @param	string	the filename hash
 	 * @param	string	the cache type
 	 * @return	string
@@ -276,15 +290,20 @@ class Kohana_MMI_Cache
 	}
 
 	/**
-	 * Create and configure the MMI_Cache class.
+	 * Initialize debugging (using the Request instance).
 	 *
+	 * @access	protected
 	 * @return	void
 	 */
-	protected function __construct() {}
+	protected function __construct()
+	{
+		$this->_debug = class_exists('MMI_Request') ? MMI_Request::debug() : FALSE;
+	}
 
 	/**
 	 * Clone the MMI_Cache class.
 	 *
+	 * @access	protected
 	 * @return	void
 	 */
 	protected function __clone() {}
@@ -292,6 +311,7 @@ class Kohana_MMI_Cache
 	/**
 	 * Get the class instance.
 	 *
+	 * @access	public
 	 * @return	MMI_Cache
 	 */
 	public static function instance()
@@ -306,6 +326,7 @@ class Kohana_MMI_Cache
 	/**
 	 * Get the configuration settings.
 	 *
+	 * @access	public
 	 * @param	boolean	return the configuration as an array?
 	 * @return	mixed
 	 */
