@@ -1,8 +1,8 @@
 # MMI Cache
 
-The mmi-cache module provides an additional level of organization over file-based caching.
-Different cache types (data, fragments, pages, etc.) are stored in a corresponding
-folder (located in the Kohana cache directory).
+This module provides an additional level of organization over file-based caching.
+Different top-level folders (within the Kohana cache directory) correspond to the
+various cache types (data, fragments, pages, etc.).
 
 ## Cache Types
 
@@ -10,7 +10,7 @@ The following cache types are supported.
 
 * `css` CSS files
 * `data` data
-* `default` use the default Kohana cache logic
+* `default` use the default cache directory
 * `feed` Atom and RSS feeds
 * `fragment` page fragments
 * `js` JavaScript files
@@ -44,5 +44,5 @@ The utility methods `get_default_lifetime` and `last_modified` are also availabl
 ## Configuration
 
 The cache configuration file is named `mmi-cache.php`. The default lifetimes for the
-cache types are configured using the `lifetimes` setting.
+various cache types are configured using the `lifetimes` setting.
 

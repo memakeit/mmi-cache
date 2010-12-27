@@ -1,12 +1,12 @@
 # MMI Cache Module
 
 This module provides an additional level of organization over file-based caching.
-Different cache types (data, fragments, pages, etc.) are stored in a corresponding
-folder (located in the Kohana cache directory).
+Different top-level folders (within the Kohana cache directory) correspond to the
+various cache types (data, fragments, pages, etc.).
 
 ## Dependencies
 
-* [mmi-util](http://github.com/memakeit/mmi-util) (only for test controllers)
+* [mmi-util](https://github.com/memakeit/mmi-util) (only for test controllers)
 
 ## Documentation
 
