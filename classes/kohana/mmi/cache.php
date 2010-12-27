@@ -37,11 +37,6 @@ class Kohana_MMI_Cache
 	protected static $_instance;
 
 	/**
-	 * @var boolean turn debugging on?
-	 **/
-	protected $_debug;
-
-	/**
 	 * Get a cache item.
 	 *
 	 * @access	public
@@ -287,17 +282,6 @@ class Kohana_MMI_Cache
 			$dir .= DIRECTORY_SEPARATOR.$file[0].$file[1].DIRECTORY_SEPARATOR;
 		}
 		return $dir;
-	}
-
-	/**
-	 * Initialize debugging (using the Request instance).
-	 *
-	 * @access	protected
-	 * @return	void
-	 */
-	protected function __construct()
-	{
-		$this->_debug = class_exists('MMI_Request') ? MMI_Request::debug() : FALSE;
 	}
 
 	/**
