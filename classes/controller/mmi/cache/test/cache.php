@@ -7,13 +7,8 @@
  * @copyright	(c) 2010 Me Make It
  * @license		http://www.memakeit.com/license
  */
-class Controller_MMI_Cache_Test_Cache extends Controller
+class Controller_MMI_Cache_Test_Cache extends Controller_MMI_Cache_Test
 {
-	/**
-	 * @var boolean turn debugging on?
-	 **/
-	public $debug = TRUE;
-
 	/**
 	 * Test cache functionality.
 	 *
